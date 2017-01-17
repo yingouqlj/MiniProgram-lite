@@ -6,8 +6,7 @@
  * Time: 下午5:15
  */
 
-namespace King\Core\MiniProgram\Api;
-
+namespace Yingou\MiniProgram\Api;
 
 class CreateQrCode extends BaseApi
 {
@@ -23,13 +22,13 @@ class CreateQrCode extends BaseApi
      * @param $width
      * @return resource
      */
-    public function create($path, $width=480)
+    public function create($path, $width = 480)
     {
         $params = [
             'path' => $path,
             'width' => $width,
         ];
-        return $this->query(self::API.'?access_token='.$this->access_token, $params,'post');
+        return $this->query(self::API . '?access_token=' . $this->access_token, $params, 'post');
 
     }
 

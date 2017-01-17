@@ -6,8 +6,7 @@
  * Time: 下午5:15
  */
 
-namespace King\Core\MiniProgram\Api;
-
+namespace Yingou\MiniProgram\Api;
 
 class JsCodeToSession extends BaseApi
 {

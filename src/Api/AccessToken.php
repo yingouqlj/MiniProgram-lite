@@ -6,7 +6,7 @@
  * Time: 下午5:15
  */
 
-namespace King\Core\MiniProgram\Api;
+namespace Yingou\MiniProgram\Api;
 
 
 class AccessToken extends BaseApi
@@ -25,7 +25,7 @@ class AccessToken extends BaseApi
             'secret' => $this->secret,
         ];
         $result = $this->query(self::API, $params);
-        foreach ($result as $k=>$v){
+        foreach ($result as $k => $v) {
             $this->$k = $v;
         }
         return $this;

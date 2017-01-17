@@ -6,10 +6,8 @@
  * Time: 下午1:49
  */
 
-namespace King\Core\MiniProgram;
+namespace Yingou\MiniProgram;
 
-
-use King\Core\CoreFactory;
 
 class Config
 {
@@ -17,12 +15,13 @@ class Config
     public $secret;
     public $access_token;
     const ACCESS_TOKEN_REDIS_KEY = 'wx_access_token';
+    protected $tmpFile = 'mini_program_token.tmp';
 
     public function __construct($config = null)
     {
 
         if ($config == null) {
-            $config = CoreFactory::instance()->packageConfig('miniProgram');
+            //   $config = CoreFactory::instance()->packageConfig('miniProgram');
         }
         if (isset($config['appId'])) {
             $this->appId = $config['appId'];
@@ -34,21 +33,20 @@ class Config
 
     public function getAccessToken()
     {
-        if (!$this->redis()->exists(self::ACCESS_TOKEN_REDIS_KEY)) {
+        if (!file_exists(sys_get_temp_dir() . $this->tmpFile)) {
             return null;
         }
-        return $this->redis()->get(self::ACCESS_TOKEN_REDIS_KEY);
+        $data = json_decode(file_get_contents(sys_get_temp_dir() . $this->tmpFile), true);
+        if ($data['expire'] > time()) {
+            return $data['token'];
+        }
+        return null;
     }
 
     public function setAccessToken($token, $expires = 0)
     {
-        $this->redis()->setex(self::ACCESS_TOKEN_REDIS_KEY, $expires, $token);
-        return true;
+        return file_put_contents(sys_get_temp_dir() . $this->tmpFile, json_encode(['token' => $token, 'expire' => (time() + $expires)]));
     }
 
-    protected function redis()
-    {
-        return CoreFactory::instance()->redis();
-    }
 
 }

@@ -1,10 +1,10 @@
 <?php
-namespace King\Core\MiniProgram;
+namespace Yingou\MiniProgram;
 
-use King\Core\MiniProgram\Api\AccessToken;
-use King\Core\MiniProgram\Api\BaseApi;
-use King\Core\MiniProgram\Api\CreateQrCode;
-use King\Core\MiniProgram\Api\JsCodeToSession;
+use Yingou\MiniProgram\Api\AccessToken;
+use Yingou\MiniProgram\Api\BaseApi;
+use Yingou\MiniProgram\Api\CreateQrCode;
+use Yingou\MiniProgram\Api\JsCodeToSession;
 
 /**
  * Created by PhpStorm.
@@ -27,7 +27,7 @@ class MiniProgram
     protected $class;
     protected $config;
 
-    public function __construct($config=null)
+    public function __construct($config = null)
     {
         if ($config == null) {
             $config = new Config();

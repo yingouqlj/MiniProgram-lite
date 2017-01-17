@@ -1,0 +1,26 @@
+{
+  "name": "yingouqlj/WechatMiniProgram-lite",
+  "description": "微信小程序sdk,wechat miniprogram sdk.(前面堆一下关键字而已.这个包主要是只有微信小程序,轻巧无负担,无需安装各种依赖包.",
+  "keywords": [
+    "wechat",
+    "weixin",
+    "weixin-sdk",
+    "miniprogram"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "yingou",
+      "email": "yingouqlj@gmail.com"
+    }
+  ],
+  "require": {
+    "php":">=5.5.0"
+  },
+  "minimum-stability" : "dev",
+  "autoload": {
+    "psr-4": {
+      "Yingou\\MiniProgram\\": "src/"
+    }
+  }
+}
