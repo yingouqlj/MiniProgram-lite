@@ -31,6 +31,10 @@ class Config
         }
     }
 
+    /**
+     * 覆盖这个方法写取token的实现 ，比如redis，数据库
+     * @return $token
+     */
     public function getAccessToken()
     {
         if (!file_exists(sys_get_temp_dir() . $this->tmpFile)) {
@@ -43,6 +47,12 @@ class Config
         return null;
     }
 
+    /**
+     * 覆盖这个方法 存token，默认写临时文件
+     * @param $token
+     * @param int $expires
+     * @return int
+     */
     public function setAccessToken($token, $expires = 0)
     {
         return file_put_contents(sys_get_temp_dir() . $this->tmpFile, json_encode(['token' => $token, 'expire' => (time() + $expires)]));

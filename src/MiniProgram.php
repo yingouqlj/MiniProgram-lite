@@ -45,8 +45,7 @@ class MiniProgram
         }
 
         if (empty($this->config)) {
-            //thow
-            return false;
+            throw new \Exception('no config');
         }
         $this->initApi();
         return $this;
@@ -80,8 +79,7 @@ class MiniProgram
             }
             return $this->class[$name];
         } else {
-            //exception
-            return false;
+            throw new \Exception('api undefined');
         }
     }
 
