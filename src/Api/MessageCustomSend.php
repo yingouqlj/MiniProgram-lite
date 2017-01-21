@@ -9,7 +9,7 @@
 namespace Yingou\MiniProgram\Api;
 
 
-class SendCustomerMessage extends BaseApi
+class MessageCustomSend extends BaseApi
 {
     const API = 'https://api.weixin.qq.com/cgi-bin/message/custom/send';
     const NEED_ACCESS_TOKEN = true;

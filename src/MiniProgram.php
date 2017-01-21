@@ -5,6 +5,8 @@ use Yingou\MiniProgram\Api\AccessToken;
 use Yingou\MiniProgram\Api\BaseApi;
 use Yingou\MiniProgram\Api\CreateQrCode;
 use Yingou\MiniProgram\Api\JsCodeToSession;
+use Yingou\MiniProgram\Api\MessageCustomSend;
+use Yingou\MiniProgram\Api\MessageWxOpenTemplateSend;
 
 /**
  * Created by PhpStorm.
@@ -14,6 +16,8 @@ use Yingou\MiniProgram\Api\JsCodeToSession;
  * @property AccessToken $access_token
  * @property CreateQrCode $create_qr_code
  * @property JsCodeToSession $js_code_to_session
+ * @property MessageCustomSend $message_custom_send
+ * @property MessageWxOpenTemplateSend message_wx_open_template_send
  */
 class MiniProgram
 {
