@@ -8,16 +8,21 @@
 当时业务需求，顺势做小程序，但是实际后端的接口用量很小，所以打算用到的接口自己包一下。  
 再然后，就打算拆出来分享出来。  
 
+##安装：
+```shell
+composer require yingouqlj/wechat-mini-program-lite
+```
 
-####基本使用:
+
+##基本使用:
 
 ```php
 <?php
 
 use Yingou\MiniProgram\MiniProgram;
 $config=[
-    'appId' => 'wx54a602a6b305f559',
-    'secret' => '3b6f96fb471a5883d8a9c4c0e040130d'
+    'appId' => 'appid',
+    'secret' => 'secret'
     ];
 $program=new MiniProgram($config);
 //创建Qrcode
@@ -26,7 +31,7 @@ $program->create_qr_code->create('/page?id=1',120);
 ```
 
 
-####建议用法:
+##建议用法:
 增加个配置继承Config  
 在里面实现 token 的读写覆盖原有方法  
 
