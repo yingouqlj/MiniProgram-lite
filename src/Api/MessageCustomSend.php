@@ -63,9 +63,7 @@ class MessageCustomSend extends BaseApi
                 $params['image'] = $this->image;
                 break;
         }
-        $result = $this->query(self::API . '?access_token=' . $this->accessToken, $params);
-        //todo: 返回结果
-        return $this;
+        return $this->post($params,['access_token'=>$this->accessToken]);
     }
 
 }

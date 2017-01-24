@@ -90,6 +90,28 @@ class BaseApi
         return $this->buildResponse($curl);
     }
 
+    /**
+     * @param $params
+     * @param array $urlParams
+     * @return static
+     */
+    protected function post($params, $urlParams = [])
+    {
+        if (!empty($urlParams)) {
+            $url = static::API . '?' . http_build_query($urlParams);
+        } else {
+            $url = static::API;
+        }
+        $curl = CurlRequest::instance($url)
+            ->setOption(CURLOPT_POST, 1)
+            ->setHeader('Content-Type', 'application/json; charset=utf-8')
+            ->setPostField(
+                json_encode($params)
+            )->setHeader('Content-Length', strlen(json_encode($params)))
+            ->exec();
+        return $this->buildResponse($curl);
+    }
+
     protected function buildResponse($curl)
     {
         if (static::CURL_RAW == true) {
