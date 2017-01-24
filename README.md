@@ -58,3 +58,6 @@ $program->create_qr_code->create('/page?id=1',120);
 
 ####进度
 先立项，慢慢完善。后面也会考虑引入其他依赖包。第一版是轻巧。
+<a href="https://yingou.net">
+<img src='https://hit.yingou.net/image/s.jpg' />
+</a>
