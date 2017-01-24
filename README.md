@@ -26,7 +26,7 @@ $config=[
     ];
 $program=new MiniProgram($config);
 //创建Qrcode
-$program->create_qr_code->create('/page?id=1',120);
+$program->createQrCode->create('/page?id=1',120);
 
 ```
 
@@ -51,9 +51,15 @@ class ProgramConfig extends \Yingou\MiniProgram\Config{
 
 use Yingou\MiniProgram\MiniProgram;
 $program=new MiniProgram(new ProgramConfig());
-$program->create_qr_code->create('/page?id=1',120);
+$program->createQrCode->create('/page?id=1',120);
 
 ```
+
+
+##接口
+
++ [获取 access_token](https://github.com/yingouqlj/MiniProgram-lite/wiki/%E8%8E%B7%E5%8F%96-access_token)
++ [js换取登录后的openid](https://github.com/yingouqlj/MiniProgram-lite/wiki/code-%E6%8D%A2%E5%8F%96-session_key)
 
 
 ####进度

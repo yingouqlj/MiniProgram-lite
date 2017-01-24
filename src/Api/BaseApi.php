@@ -22,6 +22,7 @@ class BaseApi
     protected $appId;
     protected $secret;
     protected $accessToken;
+    protected $config;
     /**
      * 如果为true 直接返回curl结果
      */
@@ -36,6 +37,7 @@ class BaseApi
     {
         $this->appId = $config->appId;
         $this->secret = $config->secret;
+        $this->config=$config;
         return $this;
     }
 
