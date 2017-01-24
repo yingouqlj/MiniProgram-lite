@@ -63,7 +63,7 @@ class MiniProgram
         foreach ($this->apiClass as $api) {
             $name = explode('\\', $api);
             //$className = strtolower(preg_replace('/(?<=\\w)(?=[A-Z])/', "_$1", array_pop($name)));
-            $className =lcfirst(array_pop($name));
+            $className = lcfirst(array_pop($name));
             $class[$className] = $api;
         }
         $this->className = $class;

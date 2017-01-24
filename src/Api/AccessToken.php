@@ -24,11 +24,7 @@ class AccessToken extends BaseApi
             'appid' => $this->appId,
             'secret' => $this->secret,
         ];
-        $result = $this->query(self::API, $params);
-        foreach ($result as $k => $v) {
-            $this->$k = $v;
-        }
-        return $this;
+        return $this->get($params);
     }
 
 }
