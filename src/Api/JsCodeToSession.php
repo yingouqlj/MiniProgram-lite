@@ -11,24 +11,24 @@ namespace Yingou\MiniProgram\Api;
 class JsCodeToSession extends BaseApi
 {
     const API = 'https://api.weixin.qq.com/sns/jscode2session';
-    protected $grant_type = 'authorization_code';
-    protected $js_code;
+    protected $grantType = 'authorization_code';
+    protected $jsCode;
     public $openid;
-    public $session_key;
+    public $sessionKey;
 
 
     /**
      * @param $code
      * @return $this
      */
-    public function getToken($code)
+    public function getSesson($code)
     {
-        $this->js_code = $code;
+        $this->jsCode = $code;
         $params = [
             'appid' => $this->appId,
             'secret' => $this->secret,
-            'js_code' => $this->js_code,
-            'grant_type' => $this->grant_type,
+            'js_code' => $this->jsCode,
+            'grant_type' => $this->grantType,
         ];
         return $this->post($params);
     }
