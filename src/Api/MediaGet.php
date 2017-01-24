@@ -18,7 +18,7 @@ class MediaGet extends BaseApi
     public function getMedia($mediaId)
     {
         $params = [
-            'access_token' => $this->access_token,
+            'access_token' => $this->accessToken,
             'media_id' => $mediaId,
         ];
         $result = $this->query(self::API, $params);

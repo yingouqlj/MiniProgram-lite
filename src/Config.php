@@ -13,7 +13,7 @@ class Config
 {
     public $appId;
     public $secret;
-    public $access_token;
+    public $accessToken;
     const ACCESS_TOKEN_REDIS_KEY = 'wx_access_token';
     protected $tmpFile = 'mini_program_token.tmp';
 

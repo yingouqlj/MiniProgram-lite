@@ -17,7 +17,7 @@ class BaseApi
     const NEED_ACCESS_TOKEN = false;
     protected $appId;
     protected $secret ;
-    protected $access_token;
+    protected $accessToken;
     const CURL_RAW = false;
 
     public function __construct(Config $config)
@@ -29,7 +29,7 @@ class BaseApi
 
     public function setAccessToken($token)
     {
-        $this->access_token = $token;
+        $this->accessToken = $token;
     }
 
     protected function query($url, $params, $method = 'get')
@@ -64,6 +64,10 @@ class BaseApi
         } catch (\Exception $e) {
            throw $e;
         }
+    }
+
+    public function jsonToSelf(){
+
     }
 
 

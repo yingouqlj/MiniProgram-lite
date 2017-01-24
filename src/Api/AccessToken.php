@@ -14,8 +14,8 @@ class AccessToken extends BaseApi
     const API = 'https://api.weixin.qq.com/cgi-bin/token';
     protected $grant_type = 'client_credential';
 
-    public $access_token;
-    public $expires_in;
+    public $accessToken;
+    public $expiresIn;
 
     public function getToken()
     {

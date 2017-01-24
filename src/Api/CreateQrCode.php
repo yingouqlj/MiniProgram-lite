@@ -28,7 +28,7 @@ class CreateQrCode extends BaseApi
             'path' => $path,
             'width' => $width,
         ];
-        return $this->query(self::API . '?access_token=' . $this->access_token, $params, 'post');
+        return $this->query(self::API . '?access_token=' . $this->accessToken, $params, 'post');
 
     }
 

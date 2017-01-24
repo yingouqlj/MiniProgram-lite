@@ -18,7 +18,7 @@ class MediaUpload extends BaseApi
     public function uploadByForm($form)
     {
         $params = [
-            'access_token' => $this->access_token,
+            'access_token' => $this->accessToken,
             'type' => '',
         ];
 // todo:Form
