@@ -15,6 +15,7 @@ class JsCodeToSession extends BaseApi
     protected $jsCode;
     public $openid;
     public $sessionKey;
+    public $unionid;
 
 
     /**
@@ -30,8 +31,6 @@ class JsCodeToSession extends BaseApi
             'js_code' => $this->jsCode,
             'grant_type' => $this->grantType,
         ];
-        return $this->post($params);
+        return $this->get($params);
     }
-
-
 }

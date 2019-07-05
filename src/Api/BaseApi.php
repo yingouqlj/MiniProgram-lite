@@ -23,6 +23,8 @@ class BaseApi
     protected $secret;
     protected $accessToken;
     protected $config;
+    public $errcode;
+    public $errmsg;
     /**
      * 如果为true 直接返回curl结果
      */
